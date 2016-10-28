@@ -1,0 +1,6 @@
+framework module Pods_GCSDemo {
+  umbrella header "Pods-GCSDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

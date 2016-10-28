@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GCSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DWq-Bg-HUc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="jds-YD-qur"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03N-AJ-cW6">
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SH-g2-yqz"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="paf-WI-5qg">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9dj-sX-mpV"/>
+                                    <constraint firstAttribute="width" constant="299" id="dgs-my-Pah"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18819339490065415" green="0.60367345328282829" blue="0.23479009231118128" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="03N-AJ-cW6" firstAttribute="top" secondItem="DWq-Bg-HUc" secondAttribute="bottom" constant="26" id="8AH-Xb-QOJ"/>
+                            <constraint firstItem="DWq-Bg-HUc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="B13-hl-KsR"/>
+                            <constraint firstItem="paf-WI-5qg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KYO-98-dib"/>
+                            <constraint firstItem="03N-AJ-cW6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RHa-yx-ZCM"/>
+                            <constraint firstItem="paf-WI-5qg" firstAttribute="top" secondItem="03N-AJ-cW6" secondAttribute="bottom" constant="14" id="TtY-XV-8lh"/>
+                            <constraint firstItem="DWq-Bg-HUc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cbb-j4-VFj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultField" destination="paf-WI-5qg" id="qfg-Qh-TBa"/>
+                        <outlet property="textField" destination="DWq-Bg-HUc" id="MIa-mf-wge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="119.1904047976012"/>
+        </scene>
+    </scenes>
+</document>
