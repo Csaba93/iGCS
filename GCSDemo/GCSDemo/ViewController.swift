@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        conn.connection(server: "192.168.1.106", port: 5760)
+        conn.connection(server: "172.19.99.160", port: 5760)
+        //152.66.156.159
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(textViewrefresh), userInfo: nil, repeats: true)
 
     }
@@ -42,13 +43,13 @@ class ViewController: UIViewController {
     
     func textViewrefresh()
     {
-        DispatchQueue.main.async {
+        /*DispatchQueue.main.async {
             if(self.conn.msg != self.msg)
             {
                 self.resultField.text = self.resultField.text! + self.conn.msg!
                 self.msg = self.conn.msg
             }
-        }
+        }*/
     }
 }
 
