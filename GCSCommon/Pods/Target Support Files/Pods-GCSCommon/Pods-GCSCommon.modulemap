@@ -1,0 +1,6 @@
+framework module Pods_GCSCommon {
+  umbrella header "Pods-GCSCommon-umbrella.h"
+
+  export *
+  module * { export * }
+}
