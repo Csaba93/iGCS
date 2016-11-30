@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0909EB01DEEDB9700FBBA2D /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0909EAF1DEEDB9700FBBA2D /* ConnectionViewController.swift */; };
 		A0BF203F1DE5A86B006A5E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF203E1DE5A86B006A5E54 /* AppDelegate.swift */; };
 		A0BF20411DE5A86B006A5E54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF20401DE5A86B006A5E54 /* ViewController.swift */; };
 		A0BF20441DE5A86B006A5E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BF20421DE5A86B006A5E54 /* Main.storyboard */; };
@@ -158,6 +159,7 @@
 /* Begin PBXFileReference section */
 		1F60D7532F23E3B08FD5A13B /* Pods-GCSCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCSCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-GCSCommon/Pods-GCSCommon.release.xcconfig"; sourceTree = "<group>"; };
 		46AB71C06AE3EA9FF6128F96 /* Pods-GCSCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCSCommon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GCSCommon/Pods-GCSCommon.debug.xcconfig"; sourceTree = "<group>"; };
+		A0909EAF1DEEDB9700FBBA2D /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
 		A0BF203B1DE5A86B006A5E54 /* GCSCommon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCSCommon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BF203E1DE5A86B006A5E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0BF20401DE5A86B006A5E54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -635,7 +637,9 @@
 			isa = PBXGroup;
 			children = (
 				A0BF203E1DE5A86B006A5E54 /* AppDelegate.swift */,
+				A0909EAF1DEEDB9700FBBA2D /* ConnectionViewController.swift */,
 				A0BF20401DE5A86B006A5E54 /* ViewController.swift */,
+				A0BF22821DE5AB86006A5E54 /* Connection.swift */,
 				A0BF20421DE5A86B006A5E54 /* Main.storyboard */,
 				A0BF20451DE5A86B006A5E54 /* Assets.xcassets */,
 				A0BF20471DE5A86B006A5E54 /* LaunchScreen.storyboard */,
@@ -650,7 +654,6 @@
 				A0BF21F41DE5A8C1006A5E54 /* mavlink_types.h */,
 				A0BF21F51DE5A8C1006A5E54 /* protocol.h */,
 				A0BF20501DE5A893006A5E54 /* GCSCommon-Bridging-Header.h */,
-				A0BF22821DE5AB86006A5E54 /* Connection.swift */,
 				A0BF22841DE5B8E3006A5E54 /* Tests */,
 				A0BF20571DE5A89B006A5E54 /* common */,
 			);
@@ -1296,6 +1299,7 @@
 				A0BF21A71DE5A89C006A5E54 /* MVMessageLogRequestList.m in Sources */,
 				A0BF21E21DE5A89C006A5E54 /* MVMessageStatustext.m in Sources */,
 				A0BF21E11DE5A89C006A5E54 /* MVMessageSimState.m in Sources */,
+				A0909EB01DEEDB9700FBBA2D /* ConnectionViewController.swift in Sources */,
 				A0BF21BC1DE5A89C006A5E54 /* MVMessageOpticalFlow.m in Sources */,
 				A0BF21E71DE5A89C006A5E54 /* MVMessageTerrainReport.m in Sources */,
 				A0BF22831DE5AB86006A5E54 /* Connection.swift in Sources */,
