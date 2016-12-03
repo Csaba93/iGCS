@@ -18,7 +18,8 @@ class Connection: NSObject, GCDAsyncSocketDelegate, MVMavlinkDelegate
     var vfrHud : MVMessageVfrHud?
     var sysStatus : MVMessageSysStatus?
     var heartBeat : MVMessageHeartbeat?
-    var statusTextarray = [String]()
+    var statusTextArray = [String]()
+    var logMessageArray = [String]()
     
     func connection(server: String, port: Int)
     {
@@ -33,7 +34,6 @@ class Connection: NSObject, GCDAsyncSocketDelegate, MVMavlinkDelegate
             print("ERRR:\(err)")
         }
         socket?.readData(withTimeout: 30, tag: 1)
-        //socket?.readData(toLength: 20, withTimeout: 30, tag: 1)
     }
     
     
@@ -54,30 +54,34 @@ class Connection: NSObject, GCDAsyncSocketDelegate, MVMavlinkDelegate
     
     func mavlink(_ mavlink: MVMavlink!, didGet message: MVMessageProtocol!)
     {
-        //print(message)
         switch message.message.msgid
         {
         case 0:
-            print("Heartbeat")
             heartBeat = (message as? MVMessageHeartbeat)!
-            print(heartBeat)
+            logMessageArray.append(String(describing: heartBeat))
         case 1:
-            print("sys_status")
             sysStatus = (message as? MVMessageSysStatus)!
+            logMessageArray.append(String(describing: sysStatus))
         case 30:
-            print("Attitude")
+            let attitude = (message as? MVMessageAttitude)!
+            logMessageArray.append(String(describing: attitude))
         case 33:
-            print("Global position")
             globalPosition = (message as? MVMessageGlobalPositionInt)!
+            logMessageArray.append(String(describing: globalPosition))
         case 42:
-            print("mission_current")
+            let mission = (message as? MVMessageMissionCurrent)!
+            logMessageArray.append(String(describing: mission))
         case 74:
-            print("vfr hud")
             vfrHud = (message as? MVMessageVfrHud)!
+            logMessageArray.append(String(describing: vfrHud))
         case 253:
-            print("statustext")
+            if (statusTextArray.count >= 40)
+            {
+                statusTextArray.removeAll()
+            }
             let statusText: MVMessageStatustext = (message as? MVMessageStatustext)!
-            statusTextarray.append((statusText.text())!) //TODO üríteni a tárat
+            statusTextArray.append((statusText.text())!)
+            logMessageArray.append((statusText.text())!)
         default:
             break
         }

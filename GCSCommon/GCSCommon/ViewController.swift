@@ -10,17 +10,16 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    
     var msg : String? = nil
     var timer = Timer()
 
-    @IBOutlet weak var textView : UITextView!
+    @IBOutlet weak var statusTextView: UITextView!
     @IBOutlet weak var latLabel : UILabel!
     @IBOutlet weak var longLabel : UILabel!
-    @IBOutlet weak var relativeAlt: UILabel!
-    @IBOutlet weak var absAlt: UILabel!
-    @IBOutlet weak var airSpeed: UILabel!
-    @IBOutlet weak var groundSpeed: UILabel!
+    @IBOutlet weak var relativeAltLabel: UILabel!
+    @IBOutlet weak var absAltLabel: UILabel!
+    @IBOutlet weak var airSpeedLabel: UILabel!
+    @IBOutlet weak var groundSpeedLabel: UILabel!
     @IBOutlet weak var batteryStatusLabel: UILabel!
     @IBOutlet weak var flightModeLabel: UILabel!
     @IBOutlet weak var armDisarmLabel: UILabel!
@@ -60,11 +59,6 @@ class ViewController: UIViewController
         return true
     }
     
-    @IBAction func sendMavlink(_ sender: Any)
-    {
-        conn.sendm()
-    }
-    
     func textViewrefresh()
     {
         DispatchQueue.main.async
@@ -74,10 +68,10 @@ class ViewController: UIViewController
                 self.textView.text = self.textView.text! + (self.conn.msg?.text())! + "\n"
                 self.msg = self.conn.msg?.text()
             }*/
-            self.textView.text = ""
-            for i in conn.statusTextarray
+            //self.statusTextView.text = ""
+            for i in conn.statusTextArray
             {
-                self.textView.text = self.textView.text! + i + "\n"
+                self.statusTextView.text = self.statusTextView.text! + i + "\n"
             }
             
             if (conn.globalPosition?.lat() != nil)
@@ -88,14 +82,14 @@ class ViewController: UIViewController
         
             if (conn.globalPosition?.alt() != nil)
             {
-                self.absAlt.text = "AMSL: " + String(describing: Int(conn.globalPosition!.alt())/1000)
-                self.relativeAlt.text = "AGL: " + String(describing: Int(conn.globalPosition!.relativeAlt())/1000)
+                self.absAltLabel.text = "AMSL: " + String(describing: Int(conn.globalPosition!.alt())/1000)
+                self.relativeAltLabel.text = "AGL: " + String(describing: Int(conn.globalPosition!.relativeAlt())/1000)
             }
             
             if (conn.vfrHud?.airspeed() != nil)
             {
-               self.airSpeed.text = "AS: " + String(describing: Int(conn.vfrHud!.airspeed())) + "m/s"
-               self.groundSpeed.text = "GS: " + String(describing: Int(conn.vfrHud!.groundspeed())) + "m/s"
+               self.airSpeedLabel.text = "AS: " + String(describing: Int(conn.vfrHud!.airspeed())) + "m/s"
+               self.groundSpeedLabel.text = "GS: " + String(describing: Int(conn.vfrHud!.groundspeed())) + "m/s"
             }
             
             if (conn.sysStatus?.batteryRemaining() != nil)

@@ -115,6 +115,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r24-ZQ-3Jn">
                                 <rect key="frame" x="406.5" y="270" width="111" height="30"/>
                                 <state key="normal" title="Show messages"/>
+                                <connections>
+                                    <segue destination="Yv6-Hs-Zjj" kind="show" id="TdB-hk-EDg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6A-Ls-V4S">
                                 <rect key="frame" x="421" y="187" width="82" height="30"/>
@@ -172,16 +175,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="absAlt" destination="GqO-9I-vi8" id="7WE-Hp-nSN"/>
-                        <outlet property="airSpeed" destination="mci-iQ-FII" id="7Jj-NZ-Y8b"/>
+                        <outlet property="absAltLabel" destination="GqO-9I-vi8" id="C2j-db-gcz"/>
+                        <outlet property="airSpeedLabel" destination="mci-iQ-FII" id="4es-8j-Nwh"/>
                         <outlet property="armDisarmLabel" destination="Kj6-Y4-UWg" id="awR-xl-qKT"/>
                         <outlet property="batteryStatusLabel" destination="sOZ-Rt-1Xp" id="em5-NQ-qwi"/>
                         <outlet property="flightModeLabel" destination="raf-E0-dMx" id="oIT-A1-q3p"/>
-                        <outlet property="groundSpeed" destination="yAC-AC-YYy" id="HOJ-fF-rJv"/>
+                        <outlet property="groundSpeedLabel" destination="yAC-AC-YYy" id="iem-8f-Q21"/>
                         <outlet property="latLabel" destination="ebm-bc-huI" id="7tx-cO-Jap"/>
                         <outlet property="longLabel" destination="abi-Xu-K4H" id="HM5-SG-sre"/>
-                        <outlet property="relativeAlt" destination="ykj-dN-cBq" id="UlP-hn-emQ"/>
-                        <outlet property="textView" destination="Kee-6x-rPw" id="L7i-EO-2WO"/>
+                        <outlet property="relativeAltLabel" destination="ykj-dN-cBq" id="K7F-Oz-fcN"/>
+                        <outlet property="statusTextView" destination="Kee-6x-rPw" id="gG5-Jr-w1z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -325,7 +328,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOs-Nr-9Id" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2460" y="28"/>
+            <point key="canvasLocation" x="1815" y="-555"/>
+        </scene>
+        <!--Log View Controller-->
+        <scene sceneID="a8G-PV-v2b">
+            <objects>
+                <viewController id="Yv6-Hs-Zjj" customClass="LogViewController" customModule="GCSCommon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8nM-44-53c"/>
+                        <viewControllerLayoutGuide type="bottom" id="3rd-km-t5C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gMR-Q6-evM">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ul8-4V-qXB">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="290"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGH-53-iTy">
+                                <rect key="frame" x="13" y="290" width="53" height="30"/>
+                                <state key="normal" title="Mission"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="5Q0-TU-13I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3rd-km-t5C" firstAttribute="top" secondItem="ul8-4V-qXB" secondAttribute="bottom" constant="30" id="0rd-wy-0yl"/>
+                            <constraint firstItem="ul8-4V-qXB" firstAttribute="leading" secondItem="gMR-Q6-evM" secondAttribute="leading" id="5sD-T1-BtC"/>
+                            <constraint firstAttribute="trailing" secondItem="ul8-4V-qXB" secondAttribute="trailing" id="Avg-IW-sRP"/>
+                            <constraint firstItem="ul8-4V-qXB" firstAttribute="top" secondItem="gMR-Q6-evM" secondAttribute="top" id="BTF-r6-Wz8"/>
+                            <constraint firstItem="SGH-53-iTy" firstAttribute="top" secondItem="ul8-4V-qXB" secondAttribute="bottom" id="Br5-JO-Lym"/>
+                            <constraint firstItem="SGH-53-iTy" firstAttribute="leading" secondItem="gMR-Q6-evM" secondAttribute="leading" constant="13" id="bvD-jN-FCw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logTextView" destination="ul8-4V-qXB" id="HHe-Ud-S3o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTD-4u-5c9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2218.3098591549297" y="277.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Q0-TU-13I"/>
+    </inferredMetricsTieBreakers>
 </document>

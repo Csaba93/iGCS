@@ -12,7 +12,6 @@ import UIKit
 
 class ConnectionViewController: UIViewController
 {
-
     @IBOutlet weak var ipTextField: UITextField!
     @IBOutlet weak var portTextField: UITextField!
     

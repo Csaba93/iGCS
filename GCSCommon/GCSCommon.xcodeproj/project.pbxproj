@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A010F7A31DF063E700AC7C38 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A010F7A21DF063E700AC7C38 /* LogViewController.swift */; };
 		A0909EB01DEEDB9700FBBA2D /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0909EAF1DEEDB9700FBBA2D /* ConnectionViewController.swift */; };
 		A0BF203F1DE5A86B006A5E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF203E1DE5A86B006A5E54 /* AppDelegate.swift */; };
 		A0BF20411DE5A86B006A5E54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF20401DE5A86B006A5E54 /* ViewController.swift */; };
@@ -159,6 +160,7 @@
 /* Begin PBXFileReference section */
 		1F60D7532F23E3B08FD5A13B /* Pods-GCSCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCSCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-GCSCommon/Pods-GCSCommon.release.xcconfig"; sourceTree = "<group>"; };
 		46AB71C06AE3EA9FF6128F96 /* Pods-GCSCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCSCommon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GCSCommon/Pods-GCSCommon.debug.xcconfig"; sourceTree = "<group>"; };
+		A010F7A21DF063E700AC7C38 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		A0909EAF1DEEDB9700FBBA2D /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
 		A0BF203B1DE5A86B006A5E54 /* GCSCommon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCSCommon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BF203E1DE5A86B006A5E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 				A0BF203E1DE5A86B006A5E54 /* AppDelegate.swift */,
 				A0909EAF1DEEDB9700FBBA2D /* ConnectionViewController.swift */,
 				A0BF20401DE5A86B006A5E54 /* ViewController.swift */,
+				A010F7A21DF063E700AC7C38 /* LogViewController.swift */,
 				A0BF22821DE5AB86006A5E54 /* Connection.swift */,
 				A0BF20421DE5A86B006A5E54 /* Main.storyboard */,
 				A0BF20451DE5A86B006A5E54 /* Assets.xcassets */,
@@ -1224,6 +1227,7 @@
 				A0BF21CD1DE5A89C006A5E54 /* MVMessageRcChannelsScaled.m in Sources */,
 				A0BF21C01DE5A89C006A5E54 /* MVMessageParamRequestRead.m in Sources */,
 				A0BF21A01DE5A89C006A5E54 /* MVMessageLocalPositionNedCov.m in Sources */,
+				A010F7A31DF063E700AC7C38 /* LogViewController.swift in Sources */,
 				A0BF21701DE5A89C006A5E54 /* MVMessageAttPosMocap.m in Sources */,
 				A0BF21AF1DE5A89C006A5E54 /* MVMessageMissionCurrent.m in Sources */,
 				A0BF216E1DE5A89C006A5E54 /* MVMessageAttitudeQuaternionCov.m in Sources */,
