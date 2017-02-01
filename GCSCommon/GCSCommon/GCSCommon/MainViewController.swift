@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController
+class MainViewController: UIViewController
 {
     var msg : String? = nil
     var timer = Timer()
@@ -36,7 +36,7 @@ class ViewController: UIViewController
         let delayInSeconds = 2.0
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delayInSeconds)
         {
-             conn.sendm()
+             conn.getDataStream()
         }
     }
 
@@ -44,31 +44,21 @@ class ViewController: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
-   
-    /*@IBAction func sendButton(_ sender: Any) {
-        if(textField.text != "")
-        {
-            let message = textField.text! + "\n"
-            conn.sendMessage(msg: message)
-            textField.text = ""
-        }
-    }*/
 
     override var shouldAutorotate: Bool
     {
         return true
     }
     
+    @IBAction func getMissionItemsButton(_ sender: Any)
+    {
+        missionCommands.getTheMissionItems()
+    }
+    
     func textViewrefresh()
     {
         DispatchQueue.main.async
         {
-            /*if(self.conn.msg?.text() != self.msg!)
-            {
-                self.textView.text = self.textView.text! + (self.conn.msg?.text())! + "\n"
-                self.msg = self.conn.msg?.text()
-            }*/
-            //self.statusTextView.text = ""
             for i in conn.statusTextArray
             {
                 self.statusTextView.text = self.statusTextView.text! + i + "\n"
@@ -99,7 +89,7 @@ class ViewController: UIViewController
             
             if (conn.heartBeat?.customMode() != nil)
             {
-                self.flightModeLabel.text = conn.flightMode()
+                self.flightModeLabel.text = flightModes.flightMode()
                 
                 if((conn.heartBeat!.baseMode() & 128) == 0)
                 {
@@ -114,12 +104,12 @@ class ViewController: UIViewController
 
     @IBAction func armDisarmAction(_ sender: Any)
     {
-        conn.armDisarm()
+        missionCommands.armDisarm()
     }
     
     @IBAction func startMissionAction(_ sender: Any)
     {
-        conn.missionStart()
+        missionCommands.missionStart()
     }
     
 }

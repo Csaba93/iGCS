@@ -8,6 +8,10 @@
 
 import UIKit
 
+var conn = Connection()
+var flightModes = FlightModes()
+var missionCommands = MissionCommands()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -8,8 +8,6 @@
 
 import UIKit
 
- var conn = Connection()
-
 class ConnectionViewController: UIViewController
 {
     @IBOutlet weak var ipTextField: UITextField!
